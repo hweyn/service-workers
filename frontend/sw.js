@@ -30,14 +30,13 @@ self.addEventListener('activate', async () => {
         const applicationServerKey = urlB64ToUint8Array('BDFhBVNEfR6hKdJJwCrVfpNVAYKjMx98348oDJWV0dwzWPG2EQ96KvzqNZznODtQy52FIf5mwpM6BbInl3hRTb0');
         const opt = { applicationServerKey, userVisibleOnly: true };
         const sub = await self.registration.pushManager.subscribe(opt);
-        console.log(JSON.stringify(sub));
+        console.log('sub',JSON.stringify(sub));
         const response = await saveSubscription(sub);
         console.log(response);
     } catch (err) {
         console.error('ERROR in sw activate', err);
     }
 });
-
 
 self.addEventListener('push',
 (event) => {
