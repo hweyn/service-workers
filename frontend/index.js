@@ -45,6 +45,18 @@ const main = async () => { //notice I changed main to async function so that I c
     })
 }
 
+const testPush = async () => {
+    console.log('testing push via api');
+    const SERVER_URL = 'http://localhost:4000/send-notification'
+    const response = await fetch(SERVER_URL, {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    return response.json()
+}
+
 
 
 /* *********************************
