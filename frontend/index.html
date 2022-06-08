@@ -9,7 +9,27 @@
     <script src="index.js"></script>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <!-- run frontend: http-server in terminal -->
+    <h1>Test webpush</h1>
+
     <button id="permission-btn" onclick="main()">Ask Permission</button>
+    <pre>
+        click ask permission
+        -- checks browsersupport for serviceworker and pushmanager
+        -- registers service-worker
+        -- asks browser for permission to show notifications (once, can be reset in browser settings)
+        -- shows a local notification (call swRegistration.showNotification)
+
+        when sw is activated
+        -- susbscribe to push notifications
+        -- save subscription in api (in memory)
+
+        listens to push events from browser
+        -- to trigger the push, open the backend (node index.js in terminal) and follow the instructions there.
+           Make sure frontend console has logged 'saving the subscription' before testing the push. 
+
+        ! unregister sw (dev tools > application) and hit ctrl+F5 to get clean slate (might need to update the sw as well)
+    </p>
+    <div id="subscription"></div>
 </body>
 </html>

@@ -45,7 +45,7 @@ const main = async () => { //notice I changed main to async function so that I c
     })
 }
 
-// main();
+
 
 /* *********************************
 * INFO
